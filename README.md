@@ -1,20 +1,14 @@
-<!-- Language Toggle -->
-<div align="right">
-  <button onclick="toggleLang()" style="padding:8px 16px;cursor:pointer;">🇨🇳 中文</button>
-</div>
+# 🎫 Receipt Manager Skill
+
+**English** | [中文](#中文)
 
 ---
 
-<!-- English Section -->
-<div id="en">
+## English
 
-# Receipt Manager Skill 🎫
+### Two Ways to Use
 
-Automatically extract and archive receipts from chat images.
-
-## Two Ways to Use
-
-### Option 1: Just Drop the Page to OpenClaw!
+#### Option 1: Just Drop the Page to OpenClaw!
 
 **Simply send this skill page URL to OpenClaw**, and it will:
 1. Automatically download and install the skill
@@ -23,7 +17,7 @@ Automatically extract and archive receipts from chat images.
 
 No manual installation needed!
 
-### Option 2: Manual Install
+#### Option 2: Manual Install
 
 ```bash
 # Clone to your skills folder
@@ -35,9 +29,7 @@ python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 
 Then restart OpenClaw. The skill will automatically activate when you send a receipt image.
 
----
-
-## Features
+### Features
 
 - 📷 **Auto-extract** receipt info from images
 - 🔍 **Search** receipts by vendor/category
@@ -45,10 +37,10 @@ Then restart OpenClaw. The skill will automatically activate when you send a rec
 - 💾 **Local SQLite** database - your data stays private
 - 🖼️ **Image storage** for all receipts
 
-## Commands (after skill installed)
+### Commands
 
 ```bash
-# Add receipt manually
+# Add receipt
 python3 scripts/receipt_db.py add --image receipt.jpg --vendor "Walmart" --date 2026-02-27 --total 45.50 --currency CAD --category "groceries"
 
 # Search
@@ -56,34 +48,19 @@ python3 scripts/receipt_db.py search --q "walmart"
 
 # Monthly summary
 python3 scripts/receipt_db.py summary --month 2026-02
-
-# Natural language
-python3 scripts/receipt_db.py nlp --text "2月份花了多少"
 ```
 
-## Data Location
+---
 
-- Database: `data/receipts/db.sqlite3`
-- Images: `data/receipts/images/`
+# 🎫 收据管理器技能
+
+**[English](#english)** | 中文
 
 ---
 
-**Just send a receipt image to start!** 📸
+### 两种使用方式
 
-</div>
-
----
-
-<!-- 中文 Section -->
-<div id="zh" style="display:none;">
-
-# 收据管理器技能 🎫
-
-自动从聊天图片中提取并归档收据。
-
-## 两种使用方式
-
-### 方式一：直接把页面丢给 OpenClaw！
+#### 方式一：直接把页面丢给 OpenClaw！
 
 **只需将此技能页面URL发送给 OpenClaw**，它将：
 1. 自动下载并安装技能
@@ -92,7 +69,7 @@ python3 scripts/receipt_db.py nlp --text "2月份花了多少"
 
 无需手动安装！
 
-### 方式二：手动安装
+#### 方式二：手动安装
 
 ```bash
 # 克隆到技能目录
@@ -104,9 +81,7 @@ python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 
 然后重启 OpenClaw。当您发送收据图片时，技能将自动激活。
 
----
-
-## 功能特点
+### 功能特点
 
 - 📷 **自动识别** 图片收据信息
 - 🔍 **搜索** 按商家/分类查询
@@ -114,10 +89,10 @@ python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 - 💾 **本地 SQLite** 数据完全隐私
 - 🖼️ **图片存储** 所有收据影像
 
-## 命令（安装后使用）
+### 命令
 
 ```bash
-# 手动添加收据
+# 添加收据
 python3 scripts/receipt_db.py add --image receipt.jpg --vendor "沃尔玛" --date 2026-02-27 --total 45.50 --currency CAD --category "日用品"
 
 # 搜索
@@ -125,34 +100,4 @@ python3 scripts/receipt_db.py search --q "沃尔玛"
 
 # 月度汇总
 python3 scripts/receipt_db.py summary --month 2026-02
-
-# 自然语言
-python3 scripts/receipt_db.py nlp --text "2月份花了多少"
 ```
-
-## 数据位置
-
-- 数据库: `data/receipts/db.sqlite3`
-- 图片: `data/receipts/images/`
-
----
-
-**直接发送收据图片即可开始使用！** 📸
-
-</div>
-
----
-
-<script>
-function toggleLang() {
-  var en = document.getElementById('en');
-  var zh = document.getElementById('zh');
-  if (en.style.display === 'none') {
-    en.style.display = 'block';
-    zh.style.display = 'none';
-  } else {
-    en.style.display = 'none';
-    zh.style.display = 'block';
-  }
-}
-</script>
