@@ -14,26 +14,26 @@ Automatically extract and archive receipts from chat images.
 
 ## Two Ways to Use
 
-### Option 1: Install as OpenClaw Skill
+### Option 1: Just Drop the Page to OpenClaw!
+
+**Simply send this skill page URL to OpenClaw**, and it will:
+1. Automatically download and install the skill
+2. Initialize the database
+3. Ready to receive receipt images
+
+No manual installation needed!
+
+### Option 2: Manual Install
 
 ```bash
 # Clone to your skills folder
-git clone https://github.com/clinchcc/openclaw-receipt.git ~/.openclaw/workspace/skills/receipt
+git clone https://github.com/clinchcc/openclaw-receipt-manager.git ~/.openclaw/workspace/skills/receipt
 
 # Initialize database
 python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 ```
 
 Then restart OpenClaw. The skill will automatically activate when you send a receipt image.
-
-### Option 2: Just Send Receipt to Chat! 🤳
-
-**Simply send a receipt image to OpenClaw**, and it will:
-1. Automatically extract vendor, date, total, and items
-2. Save to local database
-3. Provide summary
-
-No installation needed!
 
 ---
 
@@ -83,26 +83,26 @@ python3 scripts/receipt_db.py nlp --text "2月份花了多少"
 
 ## 两种使用方式
 
-### 方式一：安装为 OpenClaw 技能
+### 方式一：直接把页面丢给 OpenClaw！
+
+**只需将此技能页面URL发送给 OpenClaw**，它将：
+1. 自动下载并安装技能
+2. 初始化数据库
+3. 准备好接收收据图片
+
+无需手动安装！
+
+### 方式二：手动安装
 
 ```bash
 # 克隆到技能目录
-git clone https://github.com/clinchcc/openclaw-receipt.git ~/.openclaw/workspace/skills/receipt
+git clone https://github.com/clinchcc/openclaw-receipt-manager.git ~/.openclaw/workspace/skills/receipt
 
 # 初始化数据库
 python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 ```
 
 然后重启 OpenClaw。当您发送收据图片时，技能将自动激活。
-
-### 方式二：直接发送收据图片！🤳
-
-**只需将收据图片发送给 OpenClaw**，它将：
-1. 自动提取商家、日期、总价和明细
-2. 保存到本地数据库
-3. 提供汇总
-
-无需安装！
 
 ---
 
