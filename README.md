@@ -1,10 +1,10 @@
 # 🎫 Receipt Manager Skill
 
-**English** | [中文](#中文)
+**English** | [中文](#收据管理器技能)
 
 ---
 
-## English
+## <a name="english"></a>English
 
 ### Two Ways to Use
 
@@ -52,11 +52,9 @@ python3 scripts/receipt_db.py summary --month 2026-02
 
 ---
 
-# 🎫 收据管理器技能
+## <a name="收据管理器技能"></a>🎫 收据管理器技能
 
 **[English](#english)** | 中文
-
----
 
 ### 两种使用方式
 
