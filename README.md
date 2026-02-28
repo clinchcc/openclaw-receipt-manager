@@ -6,56 +6,17 @@
 
 ## <a name="english"></a>English
 
-### Two Ways to Use
+### Quick Start
 
-#### Option 1: Just Drop the Page to OpenClaw!
+1. **Install**: `git clone https://github.com/clinchcc/openclaw-receipt-manager.git ~/.openclaw/workspace/skills/receipt`
+2. **Init**: `python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init`
+3. **Use**: Send receipt image to OpenClaw
 
-**Simply send this skill page URL to OpenClaw**, and it will:
-1. Automatically download and install the skill
-2. Initialize the database
-3. Ready to receive receipt images
-
-No manual installation needed!
-
-#### Option 2: Manual Install
+### Commands
 
 ```bash
-# Clone to your skills folder
-git clone https://github.com/clinchcc/openclaw-receipt-manager.git ~/.openclaw/workspace/skills/receipt
-
-# Initialize database
-python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
-```
-
-Then restart OpenClaw. The skill will automatically activate when you send a receipt image.
-
-### How It Works
-
-1. **Send receipt image** to OpenClaw
-2. **AI recognizes** vendor, date, total, items (runs locally or via your configured AI)
-3. **Skill saves** to local database - **all data stays on your machine**
-4. **Get summary** anytime with natural language
-
-### Privacy & Security
-
-- ✅ All receipt data stored **locally** (SQLite in your skills folder)
-- ✅ Images saved to **your local machine only**
-- ✅ No external servers - **nothing sent to the cloud**
-- ✅ Open source - you can audit the code
-
-### Natural Language Commands
-
-Just talk to OpenClaw:
-
-- "查查2月份花了多少" / "How much did I spend in February?"
-- "列出所有沃尔玛的收据" / "List all Walmart receipts"
-- "这个月买了什么" / "What did I buy this month?"
-
-### Manual Commands
-
-```bash
-# Add receipt
-python3 scripts/receipt_db.py add --image receipt.jpg --vendor "Walmart" --date 2026-02-27 --total 45.50 --currency CAD --category groceries
+# List receipts
+python3 scripts/receipt_db.py list
 
 # Search
 python3 scripts/receipt_db.py search --q "walmart"
@@ -64,69 +25,33 @@ python3 scripts/receipt_db.py search --q "walmart"
 python3 scripts/receipt_db.py summary --month 2026-02
 ```
 
-### Features
+### Files
 
-- 📷 **AI-powered** receipt extraction from images
-- 🔍 **Search** receipts by vendor/category
-- 📊 **Monthly summaries** and spending reports
-- 💾 **Local SQLite** database - your data stays private
+- `scripts/receipt_db.py` - Main CLI
+- `scripts/handler.py` - OpenClaw handler
+- `data/receipts/` - Local SQLite DB + images
+
+### Privacy
+
+✅ All data stored **locally** - nothing sent to cloud
 
 ---
 
-## <a name="收据管理器技能"></a>🎫 收据管理器技能
+## <a name="收据管理器技能"></a>收据管理器技能
 
 **[English](#english)** | 中文
 
-### 两种使用方式
+### 快速开始
 
-#### 方式一：直接把页面丢给 OpenClaw！
+1. **安装**: `git clone https://github.com/clinchcc/openclaw-receipt-manager.git ~/.openclaw/workspace/skills/receipt`
+2. **初始化**: `python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init`
+3. **使用**: 发送收据图片给 OpenClaw
 
-**只需将此技能页面URL发送给 OpenClaw**，它将：
-1. 自动下载并安装技能
-2. 初始化数据库
-3. 准备好接收收据图片
-
-无需手动安装！
-
-#### 方式二：手动安装
+### 命令
 
 ```bash
-# 克隆到技能目录
-git clone https://github.com/clinchcc/openclaw-receipt-manager.git ~/.openclaw/workspace/skills/receipt
-
-# 初始化数据库
-python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
-```
-
-然后重启 OpenClaw。当您发送收据图片时，技能将自动激活。
-
-### 工作原理
-
-1. **发送收据图片**给 OpenClaw
-2. **AI 自动识别**商家、日期、金额（本地或你配置的 AI）
-3. **自动保存**到本地数据库 - **所有数据留在本地**
-4. **随时查询**用自然语言
-
-### 隐私安全
-
-- ✅ 收据数据**本地存储**（SQLite）
-- ✅ 图片保存到**本机** - 不上传
-- ✅ 无外部服务器 - **不发送到云端**
-- ✅ 开源可审计
-
-### 自然语言命令
-
-直接跟 OpenClaw 对话：
-
-- "查查2月份花了多少"
-- "列出所有沃尔玛的收据"
-- "这个月买了什么"
-
-### 手动命令
-
-```bash
-# 添加收据
-python3 scripts/receipt_db.py add --image receipt.jpg --vendor "沃尔玛" --date 2026-02-27 --total 45.50 --currency CAD --category 日用品
+# 列出收据
+python3 scripts/receipt_db.py list
 
 # 搜索
 python3 scripts/receipt_db.py search --q "沃尔玛"
@@ -135,9 +60,12 @@ python3 scripts/receipt_db.py search --q "沃尔玛"
 python3 scripts/receipt_db.py summary --month 2026-02
 ```
 
-### 功能特点
+### 文件
 
-- 📷 **AI 识别** 图片收据信息
-- 🔍 **搜索** 按商家/分类查询
-- 📊 **月度汇总** 消费报表
-- 💾 **本地 SQLite** 数据完全隐私
+- `scripts/receipt_db.py` - 主 CLI
+- `scripts/handler.py` - OpenClaw 处理器
+- `data/receipts/` - 本地 SQLite 数据库 + 图片
+
+### 隐私
+
+✅ 所有数据**本地存储** - 不上传云端
