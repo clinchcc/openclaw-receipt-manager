@@ -29,19 +29,26 @@ python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 
 Then restart OpenClaw. The skill will automatically activate when you send a receipt image.
 
-### Features
+### How It Works
 
-- 📷 **Auto-extract** receipt info from images
-- 🔍 **Search** receipts by vendor/category
-- 📊 **Monthly summaries** and spending reports
-- 💾 **Local SQLite** database - your data stays private
-- 🖼️ **Image storage** for all receipts
+1. **Send receipt image** to OpenClaw
+2. **AI recognizes** vendor, date, total, items
+3. **Skill saves** to local database automatically
+4. **Get summary** anytime with natural language
 
-### Commands
+### Natural Language Commands
+
+Just talk to OpenClaw:
+
+- "查查2月份花了多少" / "How much did I spend in February?"
+- "列出所有沃尔玛的收据" / "List all Walmart receipts"
+- "这个月买了什么" / "What did I buy this month?"
+
+### Manual Commands
 
 ```bash
 # Add receipt
-python3 scripts/receipt_db.py add --image receipt.jpg --vendor "Walmart" --date 2026-02-27 --total 45.50 --currency CAD --category "groceries"
+python3 scripts/receipt_db.py add --image receipt.jpg --vendor "Walmart" --date 2026-02-27 --total 45.50 --currency CAD --category groceries
 
 # Search
 python3 scripts/receipt_db.py search --q "walmart"
@@ -49,6 +56,13 @@ python3 scripts/receipt_db.py search --q "walmart"
 # Monthly summary
 python3 scripts/receipt_db.py summary --month 2026-02
 ```
+
+### Features
+
+- 📷 **AI-powered** receipt extraction from images
+- 🔍 **Search** receipts by vendor/category
+- 📊 **Monthly summaries** and spending reports
+- 💾 **Local SQLite** database - your data stays private
 
 ---
 
@@ -79,19 +93,26 @@ python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 
 然后重启 OpenClaw。当您发送收据图片时，技能将自动激活。
 
-### 功能特点
+### 工作原理
 
-- 📷 **自动识别** 图片收据信息
-- 🔍 **搜索** 按商家/分类查询
-- 📊 **月度汇总** 消费报表
-- 💾 **本地 SQLite** 数据完全隐私
-- 🖼️ **图片存储** 所有收据影像
+1. **发送收据图片**给 OpenClaw
+2. **AI 自动识别**商家、日期、金额、明细
+3. **自动保存**到本地数据库
+4. **随时查询**用自然语言
 
-### 命令
+### 自然语言命令
+
+直接跟 OpenClaw 对话：
+
+- "查查2月份花了多少"
+- "列出所有沃尔玛的收据"
+- "这个月买了什么"
+
+### 手动命令
 
 ```bash
 # 添加收据
-python3 scripts/receipt_db.py add --image receipt.jpg --vendor "沃尔玛" --date 2026-02-27 --total 45.50 --currency CAD --category "日用品"
+python3 scripts/receipt_db.py add --image receipt.jpg --vendor "沃尔玛" --date 2026-02-27 --total 45.50 --currency CAD --category 日用品
 
 # 搜索
 python3 scripts/receipt_db.py search --q "沃尔玛"
@@ -99,3 +120,10 @@ python3 scripts/receipt_db.py search --q "沃尔玛"
 # 月度汇总
 python3 scripts/receipt_db.py summary --month 2026-02
 ```
+
+### 功能特点
+
+- 📷 **AI 识别** 图片收据信息
+- 🔍 **搜索** 按商家/分类查询
+- 📊 **月度汇总** 消费报表
+- 💾 **本地 SQLite** 数据完全隐私
