@@ -1,0 +1,7 @@
+{
+  "name": "receipt-manager",
+  "version": "1.0.0",
+  "description": "Receipt management skill - automatically extract and archive receipts from chat images",
+  "trigger": ["receipt", "收据", "发票", "expense", "报销", "花费", "消费"],
+  "author": "clinch"
+}
