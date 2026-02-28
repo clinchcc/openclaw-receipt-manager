@@ -32,9 +32,16 @@ Then restart OpenClaw. The skill will automatically activate when you send a rec
 ### How It Works
 
 1. **Send receipt image** to OpenClaw
-2. **AI recognizes** vendor, date, total, items
-3. **Skill saves** to local database automatically
+2. **AI recognizes** vendor, date, total, items (runs locally or via your configured AI)
+3. **Skill saves** to local database - **all data stays on your machine**
 4. **Get summary** anytime with natural language
+
+### Privacy & Security
+
+- ✅ All receipt data stored **locally** (SQLite in your skills folder)
+- ✅ Images saved to **your local machine only**
+- ✅ No external servers - **nothing sent to the cloud**
+- ✅ Open source - you can audit the code
 
 ### Natural Language Commands
 
@@ -96,9 +103,16 @@ python3 ~/.openclaw/workspace/skills/receipt/scripts/receipt_db.py init
 ### 工作原理
 
 1. **发送收据图片**给 OpenClaw
-2. **AI 自动识别**商家、日期、金额、明细
-3. **自动保存**到本地数据库
+2. **AI 自动识别**商家、日期、金额（本地或你配置的 AI）
+3. **自动保存**到本地数据库 - **所有数据留在本地**
 4. **随时查询**用自然语言
+
+### 隐私安全
+
+- ✅ 收据数据**本地存储**（SQLite）
+- ✅ 图片保存到**本机** - 不上传
+- ✅ 无外部服务器 - **不发送到云端**
+- ✅ 开源可审计
 
 ### 自然语言命令
 
