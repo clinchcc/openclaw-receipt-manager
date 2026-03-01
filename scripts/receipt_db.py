@@ -219,10 +219,9 @@ def add_receipt(args: argparse.Namespace) -> int:
         print("ERROR: invalid image path (path traversal)")
         return 2
     
-    # Validate image is within allowed directories
-    allowed_parents = [Path.home(), Path('/tmp')]
-    if not any(image.is_relative_to(p) for p in allowed_parents if p.exists()):
-        print(f"ERROR: image must be in home directory or /tmp: {image}")
+    # Validate image is within allowed directory (home only for security)
+    if not image.is_relative_to(Path.home()):
+        print(f"ERROR: image must be in home directory: {image}")
         return 2
     
     if not image.exists():
