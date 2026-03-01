@@ -213,6 +213,18 @@ def parse_items(text: str) -> list[dict[str, object]]:
 
 def add_receipt(args: argparse.Namespace) -> int:
     image = Path(args.image).expanduser().resolve()
+    
+    # Security: prevent path traversal
+    if '..' in str(image):
+        print("ERROR: invalid image path (path traversal)")
+        return 2
+    
+    # Validate image is within allowed directories
+    allowed_parents = [Path.home(), Path('/tmp')]
+    if not any(image.is_relative_to(p) for p in allowed_parents if p.exists()):
+        print(f"ERROR: image must be in home directory or /tmp: {image}")
+        return 2
+    
     if not image.exists():
         print(f"ERROR: image not found: {image}")
         return 2
