@@ -9,7 +9,7 @@ Store and query receipt data locally.
 
 ## Trigger
 
-- receipt, 收据, 发票, expense, 报销, 花费
+- receipt, expense, invoice, spending, claim
 
 ## How to Use
 
